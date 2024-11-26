@@ -37,3 +37,12 @@ These three commands are equivalent:
 `man git-<verb>`
 
 ## Git Basics
+
+Initialize a repository in an existing directory:
+<br>
+ `git init`
+<hr>
+
+Clone a git repository:
+<br>
+`git clone https://github.com/libgit2/libgit2`
