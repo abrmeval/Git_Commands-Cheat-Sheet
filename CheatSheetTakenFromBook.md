@@ -1,6 +1,6 @@
 # **Git Commands CheatSheet**
 
-## Fisrt time Git Setup
+## Fisrt-Time Git Setup
 You can use `git config --list --show-origin` to list all your settings and where they arte comming from.
 
 You can set your identity with the following commands:
