@@ -1,4 +1,4 @@
-# **Git Commands CheatSheet**
+# **Git Commands Cheat Sheet**
 
 ## Fisrt-Time Git Setup
 You can use `git config --list --show-origin` to list all your settings and where they arte comming from.
@@ -11,10 +11,13 @@ You can set your identity with the following commands:
 
 You can set a **default text editor** with the follwing command:
 <br>
-In this case is configuring **Emacs** as text editor. `git config --global core.editor emacs`
+ `git config --global core.editor emacs`
+ <br>
+ _In this case, **Emacs** is configured as text editor._
 <hr>
 
 Another way is to provide the path of the text editor:
+<br>
 `git config --global core.editor "'C:/Program Files/Notepadt++/notepad++.exe' -multiInst" -notabbar -nosession -noPlugin`
 <hr>
 
