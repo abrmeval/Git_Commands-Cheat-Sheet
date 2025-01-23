@@ -5,8 +5,8 @@ You can use `git config --list --show-origin` to list all your settings and wher
 
 You can set your identity with the following commands:
 
-1. `git config --global user.name="John Doe"`
-2. `git config --global user.email="johndoe@example.com"`
+1. `git config --global user.name "John Doe"`
+2. `git config --global user.email "johndoe@example.com"`
 <hr>
 
 You can set a **default text editor** with the follwing command:
