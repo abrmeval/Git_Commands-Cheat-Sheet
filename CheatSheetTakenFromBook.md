@@ -234,7 +234,7 @@ This will show only the commits that changed the file "README.md".
 
 ### Undoing Things
 If you want to redo that commit, make the additional
-changes you forgot, stage them, and commit again using the `--amend` option:
+changes you forgot, stage them, and commit again, you can use the `--amend` option:
 <br>
 Example:
 `git commit --amend`
