@@ -150,3 +150,91 @@ Example:
 
 ### Viewing the Commit History
 
+After you have committed your changes, you can view the commit history with the `git log` command:
+<br>
+Example:
+`git log`
+
+By default, with no arguments, `git log` lists the commits made in that repository in reverse
+chronological order.
+
+One of the more helpful options to `git log` is the `-p` option, which tells `git log` to show
+the difference for each commit. You can also limit the number of commits to show with the `-n`
+option:
+<br>
+Example:
+`git log -p -n 2`
+
+You can also use  a serires of sumarize options with `git log` like this:
+<br>    
+Example: `git log --stat`.
+
+It is used to show how many files were modified, lines added and removed.
+
+Another  really useful option is --pretty which is used to format the output of `git log`:  
+<br>
+Example: `git log --pretty=oneline`
+<br>
+This will show the commit message and the commit hash number.
+<br>
+The `online` option prints the commit hash and the commit message in a single line.
+In
+addition, the `short`, `full`, and `fuller` show  the output  the same format but with less or more information.
+
+The most intereting option value is `format` which is used to format the output with a custom format:
+
+Example:
+`git log --pretty=format:"%h %an, %ar : %s"`
+<br>
+This will show the commit hash, author name, author date, and commit message.
+
+The `--graph` option with `format` will show the commit history as a graph:
+<br>
+Example:
+`git log --pretty=format:"%h %s" --graph`
+<br>
+This will show the commit hash and commit message and also show the commit history as a graph.
+
+#### Limiting Log Output
+The time-limiting options such as `--since`, `until` and `--before` are used to limit the output of `git log`:
+
+Example:
+`git log --since="2 weeks ago"`
+<br>
+This will show the commits made in the last two weeks.
+
+The `author` option can be used to limit the output to commits made by a specific author:
+
+Example:
+`git log --author="John Doe"`
+
+The `-S` option only show commits adding or removing code matching the
+string.
+
+Example:
+`git log -S "a"`
+<br>
+This will show only the commits that changed the number of occurrences of the letter "a".
+
+The `--grep` option only show commits with a commit message containing the
+string.
+
+Example:
+`git log --grep="a"`
+<br>
+This will show  commits that their message contains the string "a".
+
+The last really useful option to pass to git log as a filter is a path.
+
+Example:
+`git log --path="README.md"`
+<br>
+This will show only the commits that changed the file "README.md".
+
+
+### Undoing Things
+If you want to redo that commit, make the additional
+changes you forgot, stage them, and commit again using the `--amend` option:
+<br>
+Example:
+`git commit --amend`
