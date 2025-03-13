@@ -1,6 +1,6 @@
 # **Git Commands Cheat Sheet**
 
-## Fisrt-Time Git Setup
+## First-Time Git Setup
 You can use `git config --list --show-origin` to list all your settings and where they arte comming from.
 
 You can set your identity with the following commands:
@@ -232,9 +232,76 @@ Example:
 This will show only the commits that changed the file "README.md".
 
 
-### Undoing Things
+## Undoing Things
 If you want to redo that commit, make the additional
 changes you forgot, stage them, and commit again, you can use the `--amend` option:
 <br>
 Example:
 `git commit --amend`
+
+You end  up with a single commit - the second commit replaces the first commit. It's as if the previous commit never happened and it won't show up in the history.
+
+### Unstaging a Staged File
+To unstage a file, use the `git reset HEAD <filename>` command:
+<br>
+Example:
+`git reset HEAD README.md`
+
+This will remove the file from the staging area and put it back in the working directory.
+
+### Unmodifying a Modified File
+To unmodify a file, use the `git checkout -- <filename>` command:
+<br>
+Example:
+`git checkout -- README.md`
+
+This will put the file back to the state it was in when you last committed it.
+
+### Undoing things with git restore
+Git version 2.23.0 introduced a new command: `git restore`. It’s basically an alternative to `git reset` which we just covered. From Git version 2.23.0 onwards, Git will use `git restore` instead of `git reset` for many undo operations.
+
+#### Unstaging a Staged File with git restore
+To unstage a file, use the `git restore --staged <filename>` command:
+<br>
+Example:
+`git restore --staged README.md`
+
+This will remove the file from the staging area and put it back in the working directory.
+
+#### Unmodifying a Modified File with git restore
+To unmodify a file, use the `git restore <filename>` command:
+<br>
+Example:
+`git restore README.md`
+
+This will put the file back to the state it was in when you last committed it.
+
+## Working with Remotes
+Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
+
+### Showing Your Remotes
+To show your remotes, use the `git remote` command: <br>
+Example:
+`git remote`
+
+You can also specify `-v` to show the URLs of the remotes.
+
+### Adding Remote Repositories
+To add a remote repository, use the `git remote add <shortname> <url>` command:
+<br>
+Example:
+`git remote add origin https://github.com/username/repo.git`
+
+## Fetching and Pulling from Your Remotes
+To fetch from a remote repository, use the `git fetch` command:
+<br>
+Example:
+`git fetch origin`
+
+The command goes out to that remote project and pulls down that remote project that you don’t have yet. After you do this, you should have references to all the branches from that remote.
+
+`git fetch` command only downloads the data to your local repository. It doesn’t merge with any of your work or modify your working directory.
+
+To pull from a remote repository, use the `git pull` command:
+<br>
+This command automatically fetch and then merge that remote branch into your local current branch.
